@@ -7,7 +7,7 @@ for a self-introduction page, primarily aimed at verifying the deployment proces
 pushed to GitHub can automatically trigger a build and deploy process, seamlessly integrating development with
 deployment.
 
-Repository URL: https://github.com/oreoft/ITMD544-S24-Lab1
+Repository URL: https://github.com/oreoft/ITMD544-S24/Lab1
 <br>
 Deployment Success Page: https://nice-flower-0ece5c210.4.azurestaticapps.net
 
