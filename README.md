@@ -1,0 +1,31 @@
+ITMD544-S24
+
+## Introduction
+
+Welcome to the ITMD544-S24 project! This project is an assignment project for my IIT Study 544 course.
+
+Repository URL: https://github.com/oreoft/ITMD544-S24-Lab1
+<br>
+Deployment Success Page: https://nice-flower-0ece5c210.4.azurestaticapps.net
+
+## Project Overview
+
+This project aims to showcase my course assignments and academic progress.
+You can click on the links below and then view the information on each lab's published page.
+
+## Lab1 - [Link](lab-1)
+
+This project is a demonstration of automatic deployment of a static page using GitHub and Azure. It contains sample code
+for a self-introduction page, primarily aimed at verifying the deployment process. The repository showcases how code
+pushed to GitHub can automatically trigger a build and deploy process, seamlessly integrating development with
+deployment.
+
+## Lab2 - [Link](lab-2)
+
+You are required to host an api that allows CRUD operation - Create, Read, Update and Delete.
+You need to use a backedn data storage for the Object.
+Asa minimum you need to have one entity for this operation.
+
+
+
+
