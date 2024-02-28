@@ -2,8 +2,7 @@
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-You can access the experience online by *
-*clicking [here](https://happy-desert-08aae5410.4.azurestaticapps.net/api/contacts)**
+You can access the experience online by **clicking [here](https://happy-desert-08aae5410.4.azurestaticapps.net/api/contacts)**
 
 ## Feature
 
@@ -19,9 +18,7 @@ This is a simple contact list application without login authentication. Its main
 
 - modifying contact information
 
-## Docs
-
-### Contacts API Documentation
+## Contacts API Documentation
 
 Online Host is `https://happy-desert-08aae5410.4.azurestaticapps.net`
 
@@ -88,7 +85,7 @@ Returns a JSON array of contacts, each containing:
 - `email` (string): Email address of the contact.
 - `notes` (string, optional): Additional notes or comments about the contact.
 
-### Screenshot
+## Screenshot
 
 - add
   ![img.png](imgs/add.png)
