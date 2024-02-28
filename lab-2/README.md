@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ITMD-544-Lab2- CRUD Interface
 
-## Getting Started
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-First, run the development server:
+You can access the experience online by *
+*clicking [here](https://happy-desert-08aae5410.4.azurestaticapps.net/api/contacts)**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Feature
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This is a simple contact list application without login authentication. Its main features include
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- viewing the contact lis,
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- adding new contacts
 
-## Learn More
+- deleting contacts
 
-To learn more about Next.js, take a look at the following resources:
+- viewing individual contact information
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- modifying contact information
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Docs
 
-## Deploy on Vercel
+### Contacts API Documentation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Online Host is `https://happy-desert-08aae5410.4.azurestaticapps.net`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### 1. Add Contact
+
+- **POST** `/api/contacts/add`
+
+##### Description
+
+Adds a new contact to the system.
+
+##### Request Body
+
+- `firstName` (string): First name of the contact.
+- `lastName` (string): Last name of the contact.
+- `email` (string): Email address of the contact.
+- `notes` (string, optional): Additional notes or comments about the contact.
+
+#### 2. Delete Contact
+
+- **POST** `/api/contacts/:uuid/delete`
+
+##### Description
+
+Deletes a specific contact from the system based on the contact's UUID.
+
+##### URL Parameters
+
+- `uuid` (string): The unique identifier of the contact to be deleted.
+
+#### 3. Edit Contact
+
+- **POST** `/api/contacts/:uuid/edit`
+
+##### Description
+
+Updates the information of an existing contact.
+
+##### URL Parameters
+
+- `uuid` (string): The unique identifier of the contact to be edited.
+
+##### Request Body
+
+- `firstName` (string): Updated first name of the contact.
+- `lastName` (string): Updated last name of the contact.
+- `email` (string): Updated email address of the contact.
+- `notes` (string, optional): Updated notes or comments about the contact.
+
+#### 4. List Contacts
+
+- **GET** `/api/contacts`
+
+##### Description
+
+Retrieves a list of all contacts in the system.
+
+##### Response
+
+Returns a JSON array of contacts, each containing:
+
+- `firstName` (string): First name of the contact.
+- `lastName` (string): Last name of the contact.
+- `email` (string): Email address of the contact.
+- `notes` (string, optional): Additional notes or comments about the contact.
+
+### Screenshot
+
+- add
+  ![img.png](imgs/add.png)
+- delete
+  ![img_1.png](imgs/delete.png)
+- update
+  ![img_2.png](imgs/edit.png)
+- query
+  ![img_3.png](imgs/contacts.png)
