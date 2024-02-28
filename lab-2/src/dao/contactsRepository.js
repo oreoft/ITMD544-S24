@@ -1,4 +1,4 @@
-const { openDb } = require('./database');
+const {openDb} = require("@/dao/database");
 
 const repo = {
     findAll: async () => {
@@ -15,7 +15,7 @@ const repo = {
     },
     create: async (contact) => {
         const db = await openDb();
-        const { firstName, lastName, emailAddress, notes } = contact;
+        const {firstName, lastName, emailAddress, notes} = contact;
         const id = require('crypto').randomUUID();
         const lastEdited = new Date().toISOString().slice(0, 19).replace('T', ' '); // MySQL datetime format
         await db.query('INSERT INTO contacts (id, firstName, lastName, emailAddress, notes, lastEdited) VALUES (?, ?, ?, ?, ?, ?)', [id, firstName, lastName, emailAddress, notes, lastEdited]);
@@ -28,7 +28,7 @@ const repo = {
     },
     update: async (contact) => {
         const db = await openDb();
-        const { id, firstName, lastName, emailAddress, notes, lastEdited } = contact;
+        const {id, firstName, lastName, emailAddress, notes, lastEdited} = contact;
         await db.query('UPDATE contacts SET firstName = ?, lastName = ?, emailAddress = ?, notes = ?, lastEdited = ? WHERE id = ?', [firstName, lastName, emailAddress, notes, lastEdited, id]);
         await db.end();
     },
