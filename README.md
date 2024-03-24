@@ -25,7 +25,7 @@ deployment.
 - You need to use a backend data storage for the Object.
 - Asa minimum you need to have one entity for this operation.
 
-### Lab2 - [Link](lab-3)
+### Lab3 - [Link](lab-3)
 
 - You are required to host an api that allows CRUD operation - Create, Read, Update and Delete.
 - You need to use a backend data storage for the Object.
