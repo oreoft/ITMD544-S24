@@ -40,13 +40,13 @@ export default {
   },
   methods: {
     async fetchMovies() {
-      const response = await axios.get('http://localhost:3000/movies');
+      const response = await axios.get('http://localhost:4000/movies');
       this.movies = response.data;
       this.fetchUsers(); // 每次获取电影列表后也更新用户列表
     },
     async handleDeleteMovie(movieId) {
       try {
-        await axios.delete(`http://localhost:3000/movies/${movieId}`);
+        await axios.delete(`http://localhost:4000/movies/${movieId}`);
         alert("Movie deleted successfully");
         this.fetchMovies(); // 重新获取电影列表
       } catch (error) {
@@ -54,7 +54,7 @@ export default {
       }
     },
     async fetchUsers() {
-      const response = await axios.get('http://localhost:3000/users');
+      const response = await axios.get('http://localhost:4000/users');
       this.users = response.data;
     },
     selectMovie(movie) {

@@ -1,7 +1,10 @@
 const express = require('express');
+const {loadFilesSync} = require('@graphql-tools/load-files');
+const {makeExecutableSchema} = require('@graphql-tools/schema');
 const {PrismaClient} = require('@prisma/client');
 const {ApolloServer, gql} = require('apollo-server-express');
 const cors = require('cors');
+const resolvers = require("./resolvers");
 const prisma = new PrismaClient();
 const app = express();
 app.use(cors());
@@ -105,40 +108,17 @@ app.get('/users', async (req, res) => {
     res.json(users);
 });
 
-// GraphQL schema和resolver
-const typeDefs = gql`
-  type Query {
-    movies: [Movie!]!
-  }
+const typeDefs = loadFilesSync(`${__dirname}/**/*.graphql`);
+const schema = makeExecutableSchema({typeDefs, resolvers});
 
-  type Movie {
-    id: ID!
-    title: String!
-    year: Int!
-    user: User!
-  }
-
-  type User {
-    id: ID!
-    name: String!
-    email: String!
-  }
-`;
-
-const resolvers = {
-    Query: {
-        movies: () => prisma.movie.findMany(),
-    },
-};
-
-const server = new ApolloServer({typeDefs, resolvers});
+const server = new ApolloServer({schema});
 
 // 修改部分
 async function startApolloServer() {
     await server.start();
     server.applyMiddleware({app});
 
-    const PORT = 3000;
+    const PORT = 4000;
     app.listen(PORT, () => {
         console.log(`Server is running on http://localhost:${PORT}`);
     });

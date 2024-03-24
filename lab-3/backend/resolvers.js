@@ -15,6 +15,23 @@ const resolvers = {
                 data: args,
             });
         },
+        updateUser: async (_, args) => {
+            const {id, ...data} = args;
+            return await prisma.user.update({
+                where: {
+                    id: id,
+                },
+                data: data,
+            });
+        },
+        deleteUser: async (_, args) => {
+            return await prisma.user.delete({
+                where: {
+                    id: args.id,
+                },
+            })
+                ;
+        },
         createMovie: async (_, args) => {
             return await prisma.movie.create({
                 data: {

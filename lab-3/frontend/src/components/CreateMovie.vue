@@ -32,7 +32,7 @@ export default {
         return;
       }
       try {
-        await axios.post('http://localhost:3000/movies', {
+        await axios.post('http://localhost:4000/movies', {
           userId: this.selectedUserId,
           title: this.title,
           year: this.year,
