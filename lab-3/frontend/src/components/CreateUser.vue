@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <h2>创建用户</h2>
-    <input v-model="name" placeholder="用户名" />
-    <input v-model="email" placeholder="邮箱" />
-    <button @click="createUser">创建</button>
+  <div class="create-user-container">
+    <h2>Create User</h2>
+    <input v-model="name" placeholder="Name"/>
+    <input v-model="email" type="email" placeholder="Email"/>
+    <button @click="createUser">Create</button>
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
   methods: {
     async createUser() {
       if (!this.name || !this.email) {
-        alert('请填写用户名和邮箱');
+        alert('Please fill in both name and email');
         return;
       }
       try {
@@ -32,10 +32,49 @@ export default {
         this.email = '';
         this.$emit('userCreated');
       } catch (error) {
-        alert("创建用户失败");
+        alert("Failed to create user");
       }
     },
   },
 };
 </script>
+
+<style>
+.create-user-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.create-user-container h2 {
+  text-align: center;
+  color: #333;
+}
+
+.create-user-container input {
+  width: 95%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.create-user-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.create-user-container button:hover {
+  background-color: #0056b3;
+}
+</style>
 

@@ -29,7 +29,7 @@ model Review {
   content String
   rating  Int
   movieId Int
-  movie   Movie  @relation(fields: [movieId], references: [id])
+  movie   Movie  @relation(fields: [movieId], references: [id], onDelete: Cascade)
   userId  Int
   user    User   @relation(fields: [userId], references: [id])
 }
