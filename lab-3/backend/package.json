@@ -1,9 +1,11 @@
 {
-  "name": "lab-3",
+  "name": "lab-3-backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "serve": "node index.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

@@ -32,12 +32,15 @@ app.post('/movies', async (req, res) => {
 });
 
 app.post('/reviews', async (req, res) => {
-    const {movieId, content, rating} = req.body;
+    const {movieId, content, rating, userId} = req.body;
     try {
         const review = await prisma.review.create({
             data: {
                 content,
                 rating,
+                user: {
+                    connect: {id: userId},
+                },
                 movie: {
                     connect: {id: movieId},
                 },
@@ -69,9 +72,31 @@ app.get('/movies/:id', async (req, res) => {
     }
 });
 
+app.delete('/movies/:id', async (req, res) => {
+    const {id} = req.params; // 从 URL 参数中获取电影 ID
+    try {
+        // 使用 Prisma 客户端删除电影
+        const movie = await prisma.movie.delete({
+            where: {
+                id: parseInt(id), // 确保 id 是一个数字
+            },
+        });
+        res.json({message: "Movie deleted successfully", movie});
+    } catch (error) {
+        // 如果出现错误（例如，找不到对应的电影），返回错误信息
+        res.status(400).json({error: error.message});
+    }
+});
+
 
 app.get('/movies', async (req, res) => {
-    const movies = await prisma.movie.findMany();
+    const movies = await prisma.movie.findMany(
+        {
+            include: {
+                reviews: true, // 确保包含 reviews
+            },
+        }
+    );
     res.json(movies);
 });
 
