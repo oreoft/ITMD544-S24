@@ -24,7 +24,7 @@ export default {
         return;
       }
       try {
-        await axios.post('http://localhost:4000/users', {
+        await axios.post(`${process.env.VUE_APP_HOST}/users`, {
           name: this.name,
           email: this.email,
         });

@@ -32,7 +32,7 @@ export default {
         return;
       }
       try {
-        await axios.post('http://localhost:4000/movies', {
+        await axios.post(`${process.env.VUE_APP_HOST}/movies`, {
           userId: this.selectedUserId,
           title: this.title,
           year: this.year,

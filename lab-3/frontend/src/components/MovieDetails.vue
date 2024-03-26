@@ -50,7 +50,7 @@ export default {
         return;
       }
       try {
-        await axios.post('http://localhost:4000/reviews', {
+        await axios.post(`${process.env.VUE_APP_HOST}/reviews`, {
           movieId: this.movie.id,
           content: this.newReviewContent,
           rating: this.newReviewRating,
