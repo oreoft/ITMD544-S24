@@ -10,6 +10,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
+app.get('/', async (req, res) => {
+    res.json({"content":'Welcome, documentation can be found here https://oreoft.github.io/ITMD544-S24/lab-3/'});
+});
+
 app.post('/users', async (req, res) => {
     const {name, email} = req.body;
     try {
