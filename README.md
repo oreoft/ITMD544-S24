@@ -37,7 +37,7 @@ Please visit the Lab [Link](lab-2) to see more details.
 
 Please visit the Lab3 [Link](lab-3) to see more details.
 
-## Final Project - [Link](tauri://localhost/final-project)
+## Final Project - [Link](final-project)
 
 Launch a web application, hosted with its source code on GitHub, featuring both backend and frontend components. This
 project should demonstrate your ability to integrate various technologies and concepts learned throughout the course.
@@ -52,7 +52,7 @@ project should demonstrate your ability to integrate various technologies and co
 - Authentication and Security: Secure your application using token-based authentication methods such as Active
   Directory, Firebase, or JWT (JSON Web Tokens).
 
-For more details, visit the Final Project [Link](tauri://localhost/final-project).
+For more details, visit the Final Project [Link](final-project)
 
 ## Contact Information
 
