@@ -37,7 +37,7 @@ Please visit the Lab [Link](lab-2) to see more details.
 
 Please visit the Lab3 [Link](lab-3) to see more details.
 
-## Final Project - [Link](final-project)
+### Final Project - [Link](final-project)
 
 Launch a web application, hosted with its source code on GitHub, featuring both backend and frontend components. This
 project should demonstrate your ability to integrate various technologies and concepts learned throughout the course.
