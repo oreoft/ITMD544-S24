@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    div(class="flex flex-col items-center justify-center min-h-screen bg-gray-100")
+        div(class="w-full max-w-2xl bg-white rounded-lg shadow-lg p-6 text-center pb-10")
+            img(src="https://mypicgogo.oss-cn-hangzhou.aliyuncs.com/tuchuang202404122229230.png" alt="Logo" class="mb-4 w-24 h-24 mx-auto rounded-full")
+            // 调整后的网站名称展示
+            h2(class="text-4xl font-bold text-gray-800 mb-4") #{title}
+            div(class="bg-blue-50 p-4 rounded-lg shadow")
+                h1(class="text-3xl font-bold text-blue-800 mb-2") Welcome, #{name}!
+                p(class="text-blue-600") We're thrilled to have you here.
+            div(class="mt-6 bg-blue-100 p-4 rounded-lg mb-8")
+                h2(class="text-lg font-semibold text-blue-800 mb-2") Discover Our Project
+                p(class="text-blue-700") Our web app is here to simplify waste sorting for everyone. With the power of AI, we offer quick solutions to your sorting dilemmas. Aimed at making the planet greener, we're here to guide you through correct waste disposal, anytime, anywhere.
+            // 动态按钮文案
+            if button === 'home'
+                a(href=`/${button}` class="mt-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline") Start Exploring
+            else if button === 'login'
+                a(href=`/${button}` class="mt-10 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline") Sign In With Github
+
