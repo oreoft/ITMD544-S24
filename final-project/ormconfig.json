@@ -1,0 +1,9 @@
+{
+  "type": "sqlite",
+  "database": "./data/ai_waste_sorting.db",
+  "synchronize": true,
+  "logging": false,
+  "entities": [
+    "src/entity/**/*.js"
+  ]
+}
