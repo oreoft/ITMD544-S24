@@ -59,7 +59,7 @@ router.get('/do', async function (req, res, next) {
 
         let config = {
             method: 'post',
-            url: 'http://notice.someget.cn/get-chat',
+            url: 'http://notice.someget.work/get-llm',
             headers: {
                 'Content-Type': 'application/json'
             },
