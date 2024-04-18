@@ -270,3 +270,4 @@ npm run start
 - SQLite Documentation: https://www.sqlite.org/docs.html
 - TailwindCSS Documentation: https://tailwindcss.com/docs
 - Node.js Documentation: https://nodejs.org/en/docs/
+- My Presentation Materials: https://yifan.prezo.site/itmd544-fp
